@@ -242,7 +242,7 @@ def business_report(data, geofile):
 if __name__ == '__main__':
     # ETL
     # Data Extraction
-    path = r'C:\Users\diego\OneDrive\Área de Trabalho\Portfolio Projects\House-Rocket\kc_house_data.csv'
+    path = "Streamlit-Report\Streamlit-Dashbord.py"
     url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 
     data = get_data(path)
