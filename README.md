@@ -37,8 +37,20 @@ In the end of the project it will be delivered:
   - Streamlit
   
   ## Process and Methods
+  - [STEP 1]: **Import Data**
+    - Pandas was used to extract data from .csv archive
+  - [STEP 2]: **Transform Data**
+    - Getting to know the data: dataframe lenght, data types and statistical parameters
+    - NA values were filled and duplicates were dropped
+    - Creating some features that helps on the solving of the problem
+  - [STEP 3]: **Exploratory Data Analysis**
+    - Checking whether or not the hypotheses are true
+    - Using what was discovered with the hypotheses to solve the business problem
+  - [STEP 4]: **Results**
+    - Short topic where some of the finnancial results were estimated with the solution that was presented
+
+  ## Key Insights
   
-  [STEP 1] 
   
    
 
