@@ -86,10 +86,10 @@ def filters(data):
     f_zipcode = st.sidebar.multiselect('Enter zipcode', data['zipcode'].unique())
     
     f_bedrooms = st.sidebar.selectbox('Max number of bedrooms',
-                                      sorted(set(data['bedrooms'].unique().sort_values(ascending=False))))
+                                      sorted(set(data['bedrooms'].sort_values(ascending=False).unique())))
 
     f_bathrooms = st.sidebar.selectbox('Max number of bathrooms',
-                                       sorted(set(data['bathrooms'].unique().sort_values(ascending=False))))    
+                                       sorted(set(data['bathrooms'].sort_values(ascending=False).unique())))    
 
     f_waterview = st.sidebar.checkbox('Only houses with water view')
 
