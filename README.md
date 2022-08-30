@@ -113,9 +113,9 @@ Since these sale prices are expected for the current season extracted from the "
 
 ![image](https://user-images.githubusercontent.com/110054775/187521576-0c3d3629-cde9-48fe-ae02-9904ba0a9574.png)
 
-The solution is favorable for the summer season, where the profit is even higher than Spring, that is the most valued season. However, since the quantity sales in the winter are the lowest, it affects the total profit too.
+The solution adds the company a gain of more than **400 million** with this portfolio.
 
-**
+**3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
 
 
 
