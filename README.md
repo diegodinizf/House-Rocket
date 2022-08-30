@@ -1,7 +1,5 @@
 # House Rocket - Insights Project
 
-![image](https://user-images.githubusercontent.com/110054775/187541916-0e0e6630-517d-4e62-81fc-116f7be97a58.png)
-
 **Disclaimer**: this project was inspired by the "King County House Data" published on kaggle (https://www.kaggle.com/datasets/shivachandel/kc-house-data). It is a fictitious project but with all the steps of a real project.
 
 ## Business Scenario
