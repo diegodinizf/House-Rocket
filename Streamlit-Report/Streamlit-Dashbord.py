@@ -10,8 +10,6 @@ import geopandas
 from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
 from datetime import datetime
-from IPython.display import Image
-from IPython.display import HTML 
 
 st.set_page_config(layout='wide')
 
