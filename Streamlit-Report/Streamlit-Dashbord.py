@@ -150,8 +150,6 @@ def business_report(data, geofile):
 
     st.markdown("# Business Report")
 
-    st.write('Here are ')
-
     with st.expander("Density Maps", expanded=True):
        
         st.markdown('### Portfolio Density')
