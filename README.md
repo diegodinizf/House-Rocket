@@ -65,11 +65,32 @@ In the end of the project it will be delivered:
 
  The discussion of each hypothesis to validate or refute it is found in the notebook file. Below are the summary of the analysis of hypotheses 7, 8 and 9:
 
-  ### 1. In the winter, properties prices tend to be 20% lower than in summer
+  ### 1. In the winter, properties prices tend to be 20% lower than in summer.
   
   **False**: By plotting the barchart of the prices by season is seen that prices in winter are the cheapest, but it is only 3.27% lower than the prices in summer. 
   
-  ![image](https://user-images.githubusercontent.com/110054775/187315278-292ef03f-1272-4130-b042-a285f1ae62ee.png)
+  ![image](https://user-images.githubusercontent.com/110054775/187316945-a467b517-dd97-40a1-a1ba-48e6c22dd548.png)
+  
+  ### 2. The number of bedrooms and bathrooms of a property has more effect on price than its total living area.
+  
+  **False**: By plotting the heatmap, it's possible to see what are the features with the biggest weight in data. In view of that, the total living area of the property has more influence on its price than the number of rooms.
+
+- The properties living area have of 70% of influence over the price.
+- Number of bedrooms and bathrooms have 32% and 53% of influence over the properties prices, respectively.
+- Number of bathrooms has more influence over the living area than the number of bedrooms.
+
+![image](https://user-images.githubusercontent.com/110054775/187319450-689872f4-d299-4108-bcfc-4d2b14c9ef88.png)
+
+### 3. Properties renovated after 2005 have their prices higher than the properties which were renovated before 2005 or than have never been renovated.
+
+**True**: On average, the properties renovated recently have higher prices whatever year the house was built. This analysis shows that a renovation can raise the sale price. The next challenge is to discover what are the most propitious homes to be renovated and what should be the new sale price
+
+![image](https://user-images.githubusercontent.com/110054775/187319535-c0455e6e-c86a-4ecd-a636-f968cee75322.png)
+
+
+
+
+
 
 
   
