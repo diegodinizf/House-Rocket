@@ -87,6 +87,22 @@ In the end of the project it will be delivered:
 
 ![image](https://user-images.githubusercontent.com/110054775/187319535-c0455e6e-c86a-4ecd-a636-f968cee75322.png)
 
+# Results
+
+Below are the presentations for each business problem brought by the House Rocket's CEO.
+
+**1. The CEO wants to know which properties the company should buy and their prices.**
+
+For this problem was suggested that properties which have their prices lower than the median price of the region and are in good conditions be bought.
+
+This solution prevents the company from purchasing expansive properties which must need some renovation to be sold.
+
+By plotting the count of the recommended properties, it can be seen that this solving of the problem results in **10502** properties that has a potential purchases
+
+![image](https://user-images.githubusercontent.com/110054775/187498380-8330ea96-ec60-4b50-bf4c-e2ce02fe0c28.png)
+
+
+
 
 
 
