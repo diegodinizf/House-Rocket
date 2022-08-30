@@ -37,6 +37,7 @@ def transform(data):
     # Cleaning
     data.loc[data['bedrooms']==33,'bedrooms'] = data['bedrooms'].median()
     data = data[(data['bedrooms']!=0) | (data['bathrooms'] != 0)]
+    data = data.drop_duplicates('id')
 
     # Set features
     data['month-day'] = data['date'].dt.strftime('%m-%d')
@@ -105,6 +106,7 @@ def overview(data):
     c1.metric(label="Number of Properties", value=data.drop_duplicates().shape[0])
     c2.metric(label='Average Price', value=round(data['price'].mean(),1))
     c3.metric(label='Purchase Recomendations', value=data[data['status'] == 'buy'].shape[0])
+    c4.metric(label='Recommended Renovations', value=data[data['renovations'] == 'yes'].shape[0])
 
     df = data.copy()
     # Filtering
@@ -187,30 +189,30 @@ def business_report(data, geofile):
         folium_static(density_map)
 
     
-        # Region Price Map
+        # # Region Price Map
 
-        st.markdown('### Price Density')
+        # st.markdown('### Price Density')
 
-        df = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
-        df.columns = ['ZIP', 'PRICE']
+        # df = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
+        # df.columns = ['ZIP', 'PRICE']
 
-        geofile = geofile[geofile['ZIP'].isin(df['ZIP'].tolist())]
+        # geofile = geofile[geofile['ZIP'].isin(df['ZIP'].tolist())]
 
-        region_price_map = folium.Map(location=[data['lat'].mean(),
-                                                data['long'].mean()],
-                                    default_zoom_start=15)
+        # region_price_map = folium.Map(location=[data['lat'].mean(),
+        #                                         data['long'].mean()],
+        #                             default_zoom_start=15)
 
-        region_price_map.choropleth(data=df,
-                                    geo_data=geofile,
-                                    columns=['ZIP', 'PRICE'],
-                                    key_on='feature.properties.ZIP',
-                                    fill_color='YlOrRd',
-                                    fill_opacity=0.7,
-                                    line_opacity=0.2,
-                                    legend_name='AVG PRICE')
+        # region_price_map.choropleth(data=df,
+        #                             geo_data=geofile,
+        #                             columns=['ZIP', 'PRICE'],
+        #                             key_on='feature.properties.ZIP',
+        #                             fill_color='YlOrRd',
+        #                             fill_opacity=0.7,
+        #                             line_opacity=0.2,
+        #                             legend_name='AVG PRICE')
 
         
-        folium_static(region_price_map)
+        # folium_static(region_price_map)
     
     with st.expander("Data Report"):
         c1, c2 = st.columns(2)
