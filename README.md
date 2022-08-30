@@ -111,12 +111,19 @@ This solution prevents prices from rising far above the region's range at that s
 
 Since these sale prices are expected for the current season extracted from the "date" column, it's also recommended that properties be sold until the end of their respectives seasons.
 
+Below it's shown a chart of profit by season
+
 ![image](https://user-images.githubusercontent.com/110054775/187521576-0c3d3629-cde9-48fe-ae02-9904ba0a9574.png)
 
 The solution adds the company a gain of more than **400 million** with this portfolio.
 
 **3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
 
+It was considered that homes which were smaller than the 15 ones closest to them could have an increase in their living spaces through a renovation. This option was recommendes, since total living area is the most inffluent variable for the price.
+
+Further, the new space it's limited on 25% of the total available space in the home. This limit was maintained to prevent property prices from rising too much. 
+
+This solution shows that it's possible to increase the sale prices by doing a renovation in **5612** properties (**53,%** of the portfolio of purchase recommendations)
 
 
 
