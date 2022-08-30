@@ -67,7 +67,9 @@ In the end of the project it will be delivered:
 
   ### 1. In the winter, properties prices tend to be 20% lower than in summer.
   
-  **False**: By plotting the barchart of the prices by season is seen that prices in winter are the cheapest, but it is only 3.27% lower than the prices in summer. 
+  **False**: By plotting the barchart of the prices by season is seen that prices in winter are the cheapest, but it is only 3.27% lower than the prices in summer.
+  
+  In the winter, the quantity of sales are also lower than in other seasons (see hypothesis 6 in the notebook file)
   
   ![image](https://user-images.githubusercontent.com/110054775/187316945-a467b517-dd97-40a1-a1ba-48e6c22dd548.png)
   
@@ -107,7 +109,15 @@ In this case, the properties were grouped by region (zipcode) and the season ext
 
 This solution prevents prices from rising far above the region's range at that season. Thus, properties with higher prices don't deviate from median and the ones with lower prices can get more close to the market expectation.
 
-Since these prices are expected for the current season extracted from the "date" column, it's also recommended that properties be sold until the end of their respectives seasons.
+Since these sale prices are expected for the current season extracted from the "date" column, it's also recommended that properties be sold until the end of their respectives seasons.
+
+![image](https://user-images.githubusercontent.com/110054775/187521576-0c3d3629-cde9-48fe-ae02-9904ba0a9574.png)
+
+The solution is favorable for the summer season, where the profit is even higher than Spring, that is the most valued season. However, since the quantity sales in the winter are the lowest, it affects the total profit too.
+
+**
+
+
 
 
 
