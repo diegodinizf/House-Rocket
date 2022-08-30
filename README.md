@@ -101,6 +101,16 @@ By plotting the count of the recommended properties, it can be seen that this so
 
 ![image](https://user-images.githubusercontent.com/110054775/187498380-8330ea96-ec60-4b50-bf4c-e2ce02fe0c28.png)
 
+**2. Once the property is purchased, when the company should sell it and for what price?**
+
+In this case, the properties were grouped by region (zipcode) and the season extract from date. Properties that have their prices lower than the median price of the region at that season can be sold for 30% increase in their prices. The ones with prices higher than the median can be sold for a 10% increase.
+
+This solution prevents prices from rising far above the region's range at that season. Thus, properties with higher prices don't deviate from median and the ones with lower prices can get more close to the market expectation.
+
+Since these prices are expected for the current season extracted from the "date" column, it's also recommended that properties be sold until the end of their respectives seasons.
+
+
+
 
 
 
