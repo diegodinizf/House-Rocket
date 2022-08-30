@@ -27,8 +27,8 @@ def get_geofile(url):
     return geofile
 
 @st.cache(allow_output_mutation=True)
-def convert_df(df):
-    return df.to_csv()
+def convert_data(data):
+    return data.to_csv()
     
 
 def transform(data):
@@ -106,31 +106,31 @@ def overview(data):
     c1.metric(label="Number of Properties", value=data.drop_duplicates().shape[0])
     c2.metric(label='Average Price', value=round(data['price'].mean(),1))
     c3.metric(label='Purchase Recomendations', value=data[data['status'] == 'buy'].shape[0])
-    c4.metric(label='Recommended Renovations', value=data[data['renovations'] == 'yes'].shape[0])
+    c4.metric(label='Recommended Renovations', value=data[data['renovation'] == 'yes'].shape[0])
 
-    df = data.copy()
+    data = data.copy()
     # Filtering
     if f_waterview == True:
-        df = data[data['waterfront'] == 1]
+        data = data[data['waterfront'] == 1]
         if (f_zipcode != []):
-            df = df[(df['price'] <= f_price) & (df['bedrooms'] <= f_bedrooms) & 
-                    (df['bathrooms'] <= f_bathrooms) & (df['zipcode'].isin(f_zipcode))]
+            data = data[(data['price'] <= f_price) & (data['bedrooms'] <= f_bedrooms) & 
+                    (data['bathrooms'] <= f_bathrooms) & (data['zipcode'].isin(f_zipcode))]
         else:
-            df = df[(df['price'] <= f_price) & (df['bedrooms'] <= f_bedrooms) & 
-                    (df['bathrooms'] <= f_bathrooms)]
+            data = data[(data['price'] <= f_price) & (data['bedrooms'] <= f_bedrooms) & 
+                    (data['bathrooms'] <= f_bathrooms)]
     else:
-        df = data.copy()
+        data = data.copy()
         if (f_zipcode != []):
-            df = df[(df['price'] <= f_price) & (df['bedrooms'] <= f_bedrooms) & 
-                    (df['bathrooms'] <= f_bathrooms) & (df['zipcode'].isin(f_zipcode))]
+            data = data[(data['price'] <= f_price) & (data['bedrooms'] <= f_bedrooms) & 
+                    (data['bathrooms'] <= f_bathrooms) & (data['zipcode'].isin(f_zipcode))]
         else:
-            df = df[(data['price'] <= f_price) & (df['bedrooms'] <= f_bedrooms) & 
-                    (df['bathrooms'] <= f_bathrooms)]
+            data = data[(data['price'] <= f_price) & (data['bedrooms'] <= f_bedrooms) & 
+                    (data['bathrooms'] <= f_bathrooms)]
     
 
     #c1, c2= st.columns(2)
 
-    fig = px.scatter_mapbox(df,
+    fig = px.scatter_mapbox(data,
                             lat='lat',
                             lon='long',
                             hover_name='id',
@@ -161,21 +161,21 @@ def business_report(data, geofile):
 
         check_status = st.checkbox("Show only purchase recommendations")
 
-        df = data.copy()
+        data = data.copy()
 
         if check_status == True:
-            df = df[df['status'] == 'buy']
+            data = data[data['status'] == 'buy']
         else:
-            df = data.copy()
+            data = data.copy()
 
         # Base Map - Folium
      
-        density_map = folium.Map(location=[df['lat'].mean(),
-                                        df['long'].mean()],
+        density_map = folium.Map(location=[data['lat'].mean(),
+                                        data['long'].mean()],
                                 default_zoom_start=15)
 
         marker_cluster = MarkerCluster().add_to(density_map)
-        for name, row in df.iterrows():
+        for name, row in data.iterrows():
             folium.Marker([row['lat'], row['long']],
                         popup ='Sale Price R${0} on: {1}. Features: {2} sqft, {3} bedrooms, {4} bathrooms, status: {5}'.format(row['price'],
                                                                                                                             row['season_year'],
@@ -193,16 +193,16 @@ def business_report(data, geofile):
 
         # st.markdown('### Price Density')
 
-        # df = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
-        # df.columns = ['ZIP', 'PRICE']
+        # data = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
+        # data.columns = ['ZIP', 'PRICE']
 
-        # geofile = geofile[geofile['ZIP'].isin(df['ZIP'].tolist())]
+        # geofile = geofile[geofile['ZIP'].isin(data['ZIP'].tolist())]
 
         # region_price_map = folium.Map(location=[data['lat'].mean(),
         #                                         data['long'].mean()],
         #                             default_zoom_start=15)
 
-        # region_price_map.choropleth(data=df,
+        # region_price_map.choropleth(data=data,
         #                             geo_data=geofile,
         #                             columns=['ZIP', 'PRICE'],
         #                             key_on='feature.properties.ZIP',
@@ -221,11 +221,11 @@ def business_report(data, geofile):
 
         c1.write('The table below contains the properties, as well as their purchase suggestion, renovation suggestion and their respective sale prices')
 
-        df = data[['id','zipcode','price','status','season_year','sale_price','renovation','sale_price_renovated']]
+        data = data[['id','zipcode','price','status','season_year','sale_price','renovation','sale_price_renovated']]
 
-        c1.dataframe(data=df,width=800)
+        c1.dataframe(data=data,width=800)
 
-        csv = convert_df(df)
+        csv = convert_data(data)
 
         with c2:
             st.download_button(
