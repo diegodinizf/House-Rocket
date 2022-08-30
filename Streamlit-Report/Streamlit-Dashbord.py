@@ -81,7 +81,9 @@ def filters(data):
 
     st.sidebar.title('Filters')
 
-    f_price = st.sidebar.slider('Filter by Price', min_price, max_price, avg_price)
+    f_price = st.number_input(label='Insert the max price',min_value=min_price,max_value=max_price,value=avg_price)
+
+    #f_price = st.sidebar.slider('Filter by Price', min_price, max_price, avg_price)
     
     f_zipcode = st.sidebar.multiselect('Enter zipcode', data['zipcode'].unique())
     
