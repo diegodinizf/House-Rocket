@@ -123,7 +123,14 @@ It was considered that homes which were smaller than the 15 ones closest to them
 
 Further, the new space it's limited on 25% of the total available space in the home. This limit was maintained to prevent property prices from rising too much. 
 
-This solution shows that it's possible to increase the sale prices by doing a renovation in **5612** properties (**53,%** of the portfolio of purchase recommendations)
+This solution shows that it's possible to increase the sale prices by doing a renovation in **5612** properties (**53,4%** of the portfolio of purchase recommendations)
+
+Below is presented a chart comparing the gaining House Rocket would have if they did a home renovation in some of the properties
+
+![image](https://user-images.githubusercontent.com/110054775/187540653-7d67585e-d5e6-4744-9cc2-f89a610163f1.png)
+
+
+
 
 
 
