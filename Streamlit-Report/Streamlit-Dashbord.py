@@ -182,7 +182,7 @@ def business_report(data, geofile):
 
         c1.write('The table below contains the properties, as well as their purchase suggestion, renovation suggestion and their respective sale prices')
 
-        data = data[['id','zipcode','price','status','season_year','sale_price','renovation','sale_price_renovated']]
+        data = df[['id','zipcode','price','status','season_year','sale_price','renovation','sale_price_renovated']]
 
         c1.dataframe(data=data,width=800)
 
