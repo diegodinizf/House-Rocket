@@ -145,7 +145,8 @@ def business_report(data, geofile):
                                                                                                                         row['bathrooms'],
                                                                                                                         row['status'])).add_to(marker_cluster)
     
-    folium_static(density_map)
+    with tab1:
+        folium_static(density_map)
 # ==============================================================================================================
 # TAB 2
 # ==============================================================================================================
