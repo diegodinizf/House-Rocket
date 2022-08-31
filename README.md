@@ -12,7 +12,7 @@ The company's CEO wants to know a strategy to generate profits for the next year
 
 **2. Once the property is purchased, when should the company sell it and for what price?**
 
-**3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
+**3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increase?**
 
 ## Project Assumptions
 
