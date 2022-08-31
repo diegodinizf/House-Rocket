@@ -78,7 +78,7 @@ In the end of the project it will be delivered:
   
   **False**: By plotting the heatmap, it's possible to see what are the features with the biggest correlations with price. In view of that, the total living area of the property has more influence on its price than the number of rooms.
 
-- The properties living area have of 70% of influence over the price.
+- The properties' living area ("sqft_living") have 70% of influence over the price.
 - Number of bedrooms and bathrooms have 32% and 53% of influence over the properties prices, respectively.
 - Number of bathrooms has more influence over the living area than the number of bedrooms.
 
