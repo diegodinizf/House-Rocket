@@ -49,7 +49,7 @@ def transform(data):
     return data
 
 def load_data(data):
-    data.to_csv('Streamlit-Report\data_transformed.csv')
+    data.to_csv('data_transformed.csv')
 
 
 
