@@ -92,7 +92,7 @@ In the end of the project it will be delivered:
 
 # Results
 
-Below are the presentations for each business problem brought by the House Rocket's CEO.
+Below are the answers for each business problem brought by the House Rocket's CEO.
 
 **1. The CEO wants to know which properties the company should buy and their prices.**
 
