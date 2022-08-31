@@ -120,7 +120,7 @@ The solution adds the company a gain of more than **$ 400 million** in 1 year.
 
 **3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
 
-It was considered that homes which were smaller than the 15 ones closest to them could have an increase in their living spaces through a renovation. This option was recommendes, since total living area is the most inffluent variable for the price.
+It was considered that homes which were smaller than the 15 ones closest to them could have an increase in their living spaces through a renovation. This option was recommended, since total living area is the most influential variable for the price.
 
 Further, the new space it's limited on 25% of the total available space in the home. This limit was maintained to prevent property prices from rising too much. 
 
