@@ -6,19 +6,20 @@
 
 House Rocket is a company that works reselling properties in King County (WA).
 
-The company's CEO wants to know a strategy to generate profits for the next year, so they asked to create a analysis based on some questions that he brought.
+The company's CEO wants to know a strategy to generate profits for the next year, so he asked to create an analysis based on some questions that he brought.
 
 **1. The CEO wants to know which properties the company should buy and their prices.**
 
-**2. Once the property is purchased, when the company should sell it and for what price?**
+**2. Once the property is purchased, when should the company sell it and for what price?**
 
-**3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
+**3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increase?**
 
 ## Project Assumptions
 
 - The date referenced in data is the date the property will be available for buying.
 - In case of duplicate properties ID, it was kept the most recent data.
 - The sale price is expected if the property is sold in its respective season.
+- The square feet price includes the costs with home construction
 
 ## Solution Planning
 
@@ -37,20 +38,8 @@ In the end of the project it will be delivered:
   - Streamlit
   
  ### Process and Methods
-  
- 1. **Import Data**
-    - Pandas was used to extract data from .csv archive
- 2. **Transform Data**
-    - Getting to know the data: dataframe lenght, data types and statistical parameters
-    - NA values were filled and duplicates were dropped
-    - Creating some features that helps on the solving of the problem
- 3. **Exploratory Data Analysis**
-    - Checking whether or not the hypotheses are true
-    - Using what was discovered with the hypotheses to solve the business problem
- 4. **Results**
-    - Short topic where some of the finnancial results were estimated with the solution that was presented
-   
- In this project were evaluated 10 hypotheses:
+ 
+ 10 hypotheses were stated and evaluated in order to help in the solving of the business problem:
  
  1. Waterfront properties  are 20% more expansive, on average.
  2. Properties with built year prior to 1955 are 50% cheaper, on average.
@@ -62,6 +51,18 @@ In the end of the project it will be delivered:
  8. The number of bedrooms and bathrooms of a property has more effect on price than its total living area.
  9. Properties renovated after 2005 have their prices higher than the properties which were renovated before 2005 or than have never been renovated.
  10. Properties that have their total living area smaller than the 15 closest properties are cheaper, on average.
+
+ 1. **Import Data**
+    - Pandas was used to extract data from .csv archive
+ 2. **Transform Data**
+    - Getting to know the data: dataframe lenght, data types and statistical parameters
+    - NA values were filled and duplicates were dropped
+    - Creating some features that helps on the solving of the problem
+ 3. **Exploratory Data Analysis**
+    - Checking whether or not the hypotheses are true
+    - Using what was discovered with the hypotheses to solve the business problem
+ 4. **Results**
+    - Short topic where some of the financial results were estimated with the solution that was presented
 
  The discussion of each hypothesis to validate or refute it is found in the notebook file. Below are the summary of the analysis of hypotheses 7, 8 and 9:
 
@@ -75,9 +76,9 @@ In the end of the project it will be delivered:
   
   ### 2. The number of bedrooms and bathrooms of a property has more effect on price than its total living area.
   
-  **False**: By plotting the heatmap, it's possible to see what are the features with the biggest weight in data. In view of that, the total living area of the property has more influence on its price than the number of rooms.
+  **False**: By plotting the heatmap, it's possible to see what are the features with the biggest correlations with price. In view of that, the total living area of the property has more influence on its price than the number of rooms.
 
-- The properties living area have of 70% of influence over the price.
+- The properties' living area ("sqft_living") have 70% of influence over the price.
 - Number of bedrooms and bathrooms have 32% and 53% of influence over the properties prices, respectively.
 - Number of bathrooms has more influence over the living area than the number of bedrooms.
 
@@ -91,7 +92,7 @@ In the end of the project it will be delivered:
 
 # Results
 
-Below are the presentations for each business problem brought by the House Rocket's CEO.
+Below are the answers for each business problem brought by the House Rocket's CEO.
 
 **1. The CEO wants to know which properties the company should buy and their prices.**
 
