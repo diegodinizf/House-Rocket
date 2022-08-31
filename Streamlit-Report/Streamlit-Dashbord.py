@@ -40,7 +40,7 @@ def filters(data):
 
     st.sidebar.title('Filters')
 
-    f_price = st.sidebar.number_input(label='Insert the max price you want to filter. Min: {0} Max: {1}'.format([min_price, max_price]),min_value=min_price,max_value=max_price,value=avg_price)
+    f_price = st.sidebar.number_input(label='Insert the max price you want to filter. Min: {} Max: {}'.format(min_price, max_price),min_value=min_price,max_value=max_price,value=avg_price)
 
     #f_price = st.sidebar.slider('Filter by Price', min_price, max_price, avg_price)
     
@@ -64,7 +64,7 @@ def overview(data):
 
     st.markdown("# Overview")
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric(label="Number of Properties", value=data.drop_duplicates().shape[0])
+    c1.metric(label="Number of Properties", value=data.shape[0])
     c2.metric(label='Average Price', value=round(data['price'].mean(),1))
     c3.metric(label='Purchase Recomendations', value=data[data['status'] == 'buy'].shape[0])
     c4.metric(label='Recommended Renovations', value=data[data['renovation'] == 'yes'].shape[0])
