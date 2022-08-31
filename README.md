@@ -19,6 +19,7 @@ The company's CEO wants to know a strategy to generate profits for the next year
 - The date referenced in data is the date the property will be available for buying.
 - In case of duplicate properties ID, it was kept the most recent data.
 - The sale price is expected if the property is sold in its respective season.
+- The square feet price includes the costs with home construction
 
 ## Solution Planning
 
@@ -37,20 +38,8 @@ In the end of the project it will be delivered:
   - Streamlit
   
  ### Process and Methods
-  
- 1. **Import Data**
-    - Pandas was used to extract data from .csv archive
- 2. **Transform Data**
-    - Getting to know the data: dataframe lenght, data types and statistical parameters
-    - NA values were filled and duplicates were dropped
-    - Creating some features that helps on the solving of the problem
- 3. **Exploratory Data Analysis**
-    - Checking whether or not the hypotheses are true
-    - Using what was discovered with the hypotheses to solve the business problem
- 4. **Results**
-    - Short topic where some of the finnancial results were estimated with the solution that was presented
-   
- In this project were evaluated 10 hypotheses:
+ 
+ 10 hypotheses were stated and evaluated in order to help in the solving of the business problem:
  
  1. Waterfront properties  are 20% more expansive, on average.
  2. Properties with built year prior to 1955 are 50% cheaper, on average.
@@ -62,6 +51,18 @@ In the end of the project it will be delivered:
  8. The number of bedrooms and bathrooms of a property has more effect on price than its total living area.
  9. Properties renovated after 2005 have their prices higher than the properties which were renovated before 2005 or than have never been renovated.
  10. Properties that have their total living area smaller than the 15 closest properties are cheaper, on average.
+
+ 1. **Import Data**
+    - Pandas was used to extract data from .csv archive
+ 2. **Transform Data**
+    - Getting to know the data: dataframe lenght, data types and statistical parameters
+    - NA values were filled and duplicates were dropped
+    - Creating some features that helps on the solving of the problem
+ 3. **Exploratory Data Analysis**
+    - Checking whether or not the hypotheses are true
+    - Using what was discovered with the hypotheses to solve the business problem
+ 4. **Results**
+    - Short topic where some of the financial results were estimated with the solution that was presented
 
  The discussion of each hypothesis to validate or refute it is found in the notebook file. Below are the summary of the analysis of hypotheses 7, 8 and 9:
 
