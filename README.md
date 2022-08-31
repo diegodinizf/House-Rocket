@@ -137,6 +137,18 @@ Below is presented a chart comparing the gaining House Rocket would have if they
 
 ![image](https://user-images.githubusercontent.com/110054775/187540653-7d67585e-d5e6-4744-9cc2-f89a610163f1.png)
 
+## Conclusion
+
+This project was able to present a strategy for the company to generate profit in a period of almost 1 year. It was presented purchase recommendations taking into account the conditions of the property. Also, it was possible to almost double the gains with a option of renovation in some homes that could have a bigger living space. In the end, everything that was proposed was delivered in a dynamic dashboard, using Streamlit, where the CEO may filter some attributes, and make his own visual and numeric anaylisis.
+
+## Next Steps
+
+Below are some suggestions for future steps in this project:
+
+- It can be done a sales forecast using machine learn models in order to indentify minor behaviors over the seasons
+- Since the number of bathrooms it's a influent factor over the price, it also can be done a study for new bathrooms constructions inside the property
+- Finally, the properties also could be evaluated by it's area: if it's urban or rural by its square feet lot, for example.
+
 
 
 
