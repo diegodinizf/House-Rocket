@@ -21,11 +21,6 @@ def get_data(path):
 
     return data
 
-@st.cache(allow_output_mutation=True)
-def get_geofile(url):
-    geofile = geopandas.read_file(url)
-
-    return geofile
 
 @st.cache(allow_output_mutation=True)
 def convert_data(data):
@@ -61,6 +56,7 @@ def filters(data):
 
 def overview(data):
     st.title("House Rocket's Dashboard")
+    st.write("The Overview Map below allows you to see all the properties and the price distribution by regions")
 
     st.markdown("# Overview")
     c1, c2, c3, c4 = st.columns(4)
@@ -110,7 +106,7 @@ def overview(data):
 # TAB 1
 # ==============================================================================================================
 
-def business_report(data, geofile):
+def business_report(data):
     # Density Maps
 
     st.markdown("# Business Report")
@@ -198,7 +194,6 @@ if __name__ == '__main__':
     url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 
     data = get_data(path)
-    geofile = get_geofile(url)
 
     # Transformation
     
@@ -206,7 +201,7 @@ if __name__ == '__main__':
 
     # Load
     overview(data)
-    business_report(data, geofile)
+    business_report(data)
 
 
 
