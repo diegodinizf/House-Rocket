@@ -76,7 +76,7 @@ In the end of the project it will be delivered:
   
   ### 2. The number of bedrooms and bathrooms of a property has more effect on price than its total living area.
   
-  **False**: By plotting the heatmap, it's possible to see what are the features with the biggest weight in data. In view of that, the total living area of the property has more influence on its price than the number of rooms.
+  **False**: By plotting the heatmap, it's possible to see what are the features with the biggest correlations with price. In view of that, the total living area of the property has more influence on its price than the number of rooms.
 
 - The properties living area have of 70% of influence over the price.
 - Number of bedrooms and bathrooms have 32% and 53% of influence over the properties prices, respectively.
