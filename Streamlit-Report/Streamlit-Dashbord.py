@@ -97,11 +97,11 @@ def overview(data):
                             hover_name='id',
     #                       size='sqft_price',
                             color='price',
-    #                       color_continuous_scale=px.colors.cyclical.IceFire,
+                            color_continuous_scale= px.colors.cyclical.IceFire,
                             size_max=20,
                             zoom=10)
     fig.update_layout(mapbox_style='open-street-map')
-    fig.update_layout(height=400,margin={'r':0,'t':0,'b':0,'l':0})
+    fig.update_layout(height=600,margin={'r':0,'t':0,'b':0,'l':0})
 
     st.markdown("### House Rocket's Portfolio")
     st.plotly_chart(fig)
@@ -115,7 +115,7 @@ def business_report(data, geofile):
 
     st.markdown("# Business Report")
 
-    tab1, tab2 = st.tabs(['Map Report','Data Reports'])
+    tab1, tab2 = st.tabs(['Map Report','🗃 Data Reports'])
 
     tab1.subheader('Portfolio Density')
 
