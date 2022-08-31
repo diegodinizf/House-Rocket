@@ -95,9 +95,9 @@ def overview(data):
                             lat='lat',
                             lon='long',
                             hover_name='id',
-                            size='sqft_price',
+    #                       size='sqft_price',
                             color='price',
- #                           color_continuous_scale=px.colors.cyclical.IceFire,
+    #                       color_continuous_scale=px.colors.cyclical.IceFire,
                             size_max=20,
                             zoom=10)
     fig.update_layout(mapbox_style='open-street-map')
@@ -106,97 +106,89 @@ def overview(data):
     st.markdown("### House Rocket's Portfolio")
     st.plotly_chart(fig)
 
+# ==============================================================================================================
+# TAB 1
+# ==============================================================================================================
+
 def business_report(data, geofile):
     # Density Maps
 
     st.markdown("# Business Report")
 
-    with st.expander("Density Maps", expanded=True):
-       
-        st.markdown('### Portfolio Density')
+    tab1, tab2, tab3 = st.tabs(['Map Report','Data Reports'])
 
-        st.write("Here you can visualize the properties in the region. If it's a purchase recomendation, it will be indicated in the popup.")
-        st.write('Or else you can filter it below')
+    tab1.subheader('Portfolio Density')
 
-        check_status = st.checkbox("Show only purchase recommendations")
+    tab1.write("Here you can visualize the properties in the region. If it's a purchase recomendation, it will be indicated in the popup.")
+    tab1.write('Or else you can filter it below')
 
+    check_status = st.checkbox("Show only purchase recommendations")
+
+    if check_status == True:
+        data = data[data['status'] == 'buy']
+    else:
         data = data.copy()
 
-        if check_status == True:
-            data = data[data['status'] == 'buy']
-        else:
-            data = data.copy()
-
-        # Base Map - Folium
-     
-        density_map = folium.Map(location=[data['lat'].mean(),
-                                        data['long'].mean()],
-                                default_zoom_start=15)
-
-        marker_cluster = MarkerCluster().add_to(density_map)
-        for name, row in data.iterrows():
-            folium.Marker([row['lat'], row['long']],
-                        popup ='Sale Price R${0} on: {1}. Features: {2} sqft, {3} bedrooms, {4} bathrooms, status: {5}'.format(row['price'],
-                                                                                                                            row['season_year'],
-                                                                                                                            row['sqft_living'],
-                                                                                                                            row['bedrooms'],
-                                                                                                                            row['bathrooms'],
-                                                                                                                            row['status'])).add_to(marker_cluster)
-        
-        st.write('The map below allows you to visualize where are the most expansive properties by area. The areas in red contains properties with higher prices')
-
-        folium_static(density_map)
-
+    # Base Map - Folium
     
-        # Region Price Map
+    density_map = folium.Map(location=[data['lat'].mean(),
+                                    data['long'].mean()],
+                            default_zoom_start=15)
 
-        df = data.copy()
-
-        st.markdown('### Price Density')
-
-        data = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
-        data.columns = ['ZIP', 'PRICE']
-
-        geofile = geofile[geofile['ZIP'].isin(data['ZIP'].tolist())]
-
-        region_price_map = folium.Map(location=[df['lat'].mean(),
-                                                df['long'].mean()],
-                                    default_zoom_start=15)
-
-        region_price_map.choropleth(data=data,
-                                    geo_data=geofile,
-                                    columns=['ZIP', 'PRICE'],
-                                    key_on='feature.properties.ZIP',
-                                    fill_color='YlOrRd',
-                                    fill_opacity=0.7,
-                                    line_opacity=0.2,
-                                    legend_name='AVG PRICE')
-
-        
-        folium_static(region_price_map)
+    marker_cluster = MarkerCluster().add_to(density_map)
+    for name, row in data.iterrows():
+        folium.Marker([row['lat'], row['long']],
+                    popup ='Sale Price R${0} on: {1}. Features: {2} sqft, {3} bedrooms, {4} bathrooms, status: {5}'.format(row['price'],
+                                                                                                                        row['season_year'],
+                                                                                                                        row['sqft_living'],
+                                                                                                                        row['bedrooms'],
+                                                                                                                        row['bathrooms'],
+                                                                                                                        row['status'])).add_to(marker_cluster)
     
-    with st.expander("Data Report"):
-        c1, c2 = st.columns(2)
+    folium_static(density_map)
+# ==============================================================================================================
+# TAB 2
+# ==============================================================================================================
 
-        c1.markdown('### Data Report')
+    tab2.subheader("Purchase Recommendations")
+    tab2.write('The table below contains the properties, as well as their purchase suggestion')
 
-        c1.write('The table below contains the properties, as well as their purchase suggestion, renovation suggestion and their respective sale prices')
+    report1 = data[['id','zipcode','price','status']]
 
-        data = df[['id','zipcode','price','status','season_year','sale_price','renovation','sale_price_renovated']]
-
-        c1.dataframe(data=data,width=800)
-
-        csv = convert_data(data)
-
-        with c2:
-            st.download_button(
-            label="Download.csv",
+    csv = convert_data(report1)
+    tab2.download_button(label="Download.csv",
             data=csv,
-            file_name='house_rocket_report.csv',
+            file_name='recommendation_report.csv',
             mime='text/csv')
 
-        return None
-    
+    tab2.dataframe(data=report1, width=800)
+# ==============================================================================================================
+    tab2.subheader("Sale Prices Recommendations")
+    tab2.write('The table below contains the properties recommended, their sale prices and the season of sale')
+
+    report2 = data[['id','zipcode','price','season_year','sale_price','profit']]
+
+    csv = convert_data(report2)
+    tab2.download_button(label="Download.csv",
+            data=csv,
+            file_name='sales_price_report.csv',
+            mime='text/csv')
+
+    tab2.dataframe(data=report2, width=800)
+# ==============================================================================================================
+    tab3.subheader("Renovation Recommendations")
+    tab2.write('The table below contains the properties and renovations recommended. It also shows the new sale price in case of home renovations.')
+
+    report3 = data[['id','zipcode','price','renovation','sale_price_renovated','profit_renovated']]
+
+    csv = convert_data(report3)
+    tab2.download_button(label="Download.csv",
+            data=csv,
+            file_name='renovation_report.csv',
+            mime='text/csv')
+
+    tab2.dataframe(data=report3, width=800)
+# ==============================================================================================================
 
 if __name__ == '__main__':
     # ETL
