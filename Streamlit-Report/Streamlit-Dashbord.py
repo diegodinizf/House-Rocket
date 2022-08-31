@@ -115,7 +115,7 @@ def business_report(data, geofile):
 
     st.markdown("# Business Report")
 
-    tab1, tab2, tab3 = st.tabs(['Map Report','Data Reports'])
+    tab1, tab2 = st.tabs(['Map Report','Data Reports'])
 
     tab1.subheader('Portfolio Density')
 
@@ -176,7 +176,7 @@ def business_report(data, geofile):
 
     tab2.dataframe(data=report2, width=800)
 # ==============================================================================================================
-    tab3.subheader("Renovation Recommendations")
+    tab2.subheader("Renovation Recommendations")
     tab2.write('The table below contains the properties and renovations recommended. It also shows the new sale price in case of home renovations.')
 
     report3 = data[['id','zipcode','price','renovation','sale_price_renovated','profit_renovated']]
