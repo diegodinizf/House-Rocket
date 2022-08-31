@@ -118,7 +118,7 @@ def business_report(data):
     tab1.write("Here you can visualize the properties in the region. If it's a purchase recomendation, it will be indicated in the popup.")
     tab1.write('Or else you can filter it below')
 
-    check_status = st.checkbox("Show only purchase recommendations")
+    check_status = tab1.checkbox("Show only purchase recommendations")
 
     if check_status == True:
         data = data[data['status'] == 'buy']
