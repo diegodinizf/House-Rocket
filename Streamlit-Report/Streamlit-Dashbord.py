@@ -147,30 +147,30 @@ def business_report(data, geofile):
         folium_static(density_map)
 
     
-        # # Region Price Map
+        # Region Price Map
 
-        # st.markdown('### Price Density')
+        st.markdown('### Price Density')
 
-        # data = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
-        # data.columns = ['ZIP', 'PRICE']
+        data = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
+        data.columns = ['ZIP', 'PRICE']
 
-        # geofile = geofile[geofile['ZIP'].isin(data['ZIP'].tolist())]
+        geofile = geofile[geofile['ZIP'].isin(data['ZIP'].tolist())]
 
-        # region_price_map = folium.Map(location=[data['lat'].mean(),
-        #                                         data['long'].mean()],
-        #                             default_zoom_start=15)
+        region_price_map = folium.Map(location=[data['lat'].mean(),
+                                                data['long'].mean()],
+                                    default_zoom_start=15)
 
-        # region_price_map.choropleth(data=data,
-        #                             geo_data=geofile,
-        #                             columns=['ZIP', 'PRICE'],
-        #                             key_on='feature.properties.ZIP',
-        #                             fill_color='YlOrRd',
-        #                             fill_opacity=0.7,
-        #                             line_opacity=0.2,
-        #                             legend_name='AVG PRICE')
+        region_price_map.choropleth(data=data,
+                                    geo_data=geofile,
+                                    columns=['ZIP', 'PRICE'],
+                                    key_on='feature.properties.ZIP',
+                                    fill_color='YlOrRd',
+                                    fill_opacity=0.7,
+                                    line_opacity=0.2,
+                                    legend_name='AVG PRICE')
 
         
-        # folium_static(region_price_map)
+        folium_static(region_price_map)
     
     with st.expander("Data Report"):
         c1, c2 = st.columns(2)
@@ -199,10 +199,10 @@ if __name__ == '__main__':
     # ETL
     # Data Extraction
     path = "data_transformed.csv"
-    #url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
+    url = 'https://opendata.arcgis.com/datasets/83fc2e72903343aabff6de8cb445b81c_2.geojson'
 
     data = get_data(path)
-    #geofile = get_geofile(url)
+    geofile = get_geofile(url)
 
     # Transformation
     
@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
     # Load
     overview(data)
-    business_report(data)
+    business_report(data, geofile)
 
 
 
