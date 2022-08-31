@@ -10,7 +10,7 @@ The company's CEO wants to know a strategy to generate profits for the next year
 
 **1. The CEO wants to know which properties the company should buy and their prices.**
 
-**2. Once the property is purchased, when the company should sell it and for what price?**
+**2. Once the property is purchased, when should the company sell it and for what price?**
 
 **3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
 
