@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
     # Load
     overview(data)
-    business_report(data, geofile)
+    business_report(data)
 
 
 
