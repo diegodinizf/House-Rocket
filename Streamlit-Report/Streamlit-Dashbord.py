@@ -56,7 +56,6 @@ def filters(data):
 
 def overview(data):
     st.title("House Rocket's Dashboard")
-    st.write("The Overview Map below allows you to see all the properties and the price distribution by regions")
 
     st.markdown("# Overview")
     c1, c2, c3, c4 = st.columns(4)
@@ -100,6 +99,7 @@ def overview(data):
     fig.update_layout(height=600,margin={'r':0,'t':0,'b':0,'l':0})
 
     st.markdown("### House Rocket's Portfolio")
+    st.write("The Overview Map below allows you to see all the properties and the price distribution by regions")
     st.plotly_chart(fig)
 
 # ==============================================================================================================
