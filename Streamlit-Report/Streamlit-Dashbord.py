@@ -1,5 +1,6 @@
 from cmath import exp
 from email.utils import collapse_rfc2231_value
+from lib2to3.pgen2.pgen import DFAState
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -149,6 +150,8 @@ def business_report(data, geofile):
     
         # Region Price Map
 
+        df = data.copy()
+
         st.markdown('### Price Density')
 
         data = data[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
@@ -156,8 +159,8 @@ def business_report(data, geofile):
 
         geofile = geofile[geofile['ZIP'].isin(data['ZIP'].tolist())]
 
-        region_price_map = folium.Map(location=[data['lat'].mean(),
-                                                data['long'].mean()],
+        region_price_map = folium.Map(location=[df['lat'].mean(),
+                                                df['long'].mean()],
                                     default_zoom_start=15)
 
         region_price_map.choropleth(data=data,
