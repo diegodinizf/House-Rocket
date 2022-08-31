@@ -98,7 +98,7 @@ Below are the answers for each business problem brought by the House Rocket's CE
 
 For this problem was suggested that properties which have their prices lower than the median price of the region and are in good conditions be bought.
 
-This solution prevents the company from purchasing expansive properties which must need some renovation to be sold.
+This solution prevents the company from purchasing expensive properties which must need some renovation to be sold.
 
 By plotting the count of the recommended properties, it can be seen that this solving of the problem results in **10502** properties that has a potential purchases
 
