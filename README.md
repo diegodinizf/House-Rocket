@@ -24,18 +24,25 @@ The company's CEO wants to know a strategy to generate profits for the next year
 ## Solution Planning
 
 In the end of the project it will be delivered:
-- .csv report containing:
+- .csv report containing ("csv reports" folder):
   - recommended properties for buying
   - sale price suggestion in the season
   - indicator of whether or not the property could be renovated to increase the sale price 
-- Dashboard in Streamlit
+ 
+- Dashboard in Streamlit containing:
+  - filter options: price, bedrooms, bathrooms, waterfront
+  - overview map with price distribution
+  - density portfolio Map with recommendations
+  - download option of the 3 .csv reports mentioned above
   
  ### Tools
   
   In this project was used:
-  - Python
+  - Python (pandas, numpy, matplotlib, seaborn, folium, plotly)
+  - Visual Code Studio
   - Jupyter Notebook
   - Streamlit
+  - Version Control with git and github
   
  ### Process and Methods
  
