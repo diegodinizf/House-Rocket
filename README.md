@@ -3,6 +3,8 @@
 In this link it's presented a Dashboard with the results of this project: 
 https://diegodinizf-house-roc-streamlit-reportstreamlit-dashbord-t2tc14.streamlitapp.com/
 
+#
+
 **Disclaimer**: this project was inspired by the "King County House Data" published on kaggle (https://www.kaggle.com/datasets/shivachandel/kc-house-data). It is a fictitious project but with all the steps of a real project.
 
 ## Business Scenario
