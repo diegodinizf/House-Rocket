@@ -98,13 +98,13 @@ Below are the answers for each business problem brought by the House Rocket's CE
 
 For this problem was suggested that properties which have their prices lower than the median price of the region and are in good conditions be bought.
 
-This solution prevents the company from purchasing expansive properties which must need some renovation to be sold.
+This solution prevents the company from purchasing expensive properties which must need some renovation to be sold.
 
 By plotting the count of the recommended properties, it can be seen that this solving of the problem results in **10502** properties that has a potential purchases
 
 ![image](https://user-images.githubusercontent.com/110054775/187498380-8330ea96-ec60-4b50-bf4c-e2ce02fe0c28.png)
 
-**2. Once the property is purchased, when the company should sell it and for what price?**
+**2. Once the property is purchased, when should the company sell it and for what price?**
 
 In this case, the properties were grouped by region (zipcode) and the season extract from date. Properties that have their prices lower than the median price of the region at that season can be sold for 30% increase in their prices. The ones with prices higher than the median can be sold for a 10% increase.
 
@@ -116,17 +116,17 @@ Below it's shown a chart of profit by season
 
 ![image](https://user-images.githubusercontent.com/110054775/187521576-0c3d3629-cde9-48fe-ae02-9904ba0a9574.png)
 
-The solution adds the company a gain of more than **$ 400 million** with this portfolio.
+The solution adds the company a gain of more than **$ 400 million** in 1 year.
 
 **3. Should House Rocket do a home renovation to raise the sale price? What could be the renovation suggestions and how much would the price increasing?**
 
-It was considered that homes which were smaller than the 15 ones closest to them could have an increase in their living spaces through a renovation. This option was recommendes, since total living area is the most inffluent variable for the price.
+It was considered that homes which were smaller than the 15 ones closest to them could have an increase in their living spaces through a renovation. This option was recommended, since total living area is the most influential variable for the price.
 
 Further, the new space it's limited on 25% of the total available space in the home. This limit was maintained to prevent property prices from rising too much. 
 
 This solution shows that it's possible to increase the sale prices by doing a renovation in **5612** properties (**53,4%** of the portfolio of purchase recommendations)
 
-Below is presented a chart comparing the gaining House Rocket would have if they did a home renovation in some of the properties. The new results shows that profit increases in almost 2 times. A gain of more than **$ 800 million**. 
+Below is presented a chart comparing the gaining House Rocket would have if they did a home renovation in some of the properties. The new results shows that profit increases in almost 2 times. A gain of more than **$ 800 million** in 1 year. 
 
 ![image](https://user-images.githubusercontent.com/110054775/187540653-7d67585e-d5e6-4744-9cc2-f89a610163f1.png)
 
