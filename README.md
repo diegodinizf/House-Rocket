@@ -6,7 +6,7 @@
 
 House Rocket is a company that works reselling properties in King County (WA).
 
-The company's CEO wants to know a strategy to generate profits for the next year, so he asked to create a analysis based on some questions that he brought.
+The company's CEO wants to know a strategy to generate profits for the next year, so he asked to create an analysis based on some questions that he brought.
 
 **1. The CEO wants to know which properties the company should buy and their prices.**
 
