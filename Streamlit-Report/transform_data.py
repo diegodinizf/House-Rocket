@@ -13,6 +13,7 @@ def transform(data):
     # Cleaning
     data.loc[data['bedrooms']==33,'bedrooms'] = data['bedrooms'].median()
     data = data[(data['bedrooms']!=0) | (data['bathrooms'] != 0)]
+    data = data.sort_values('date', ascending=False)
     data = data.drop_duplicates('id')
 
     # Set features

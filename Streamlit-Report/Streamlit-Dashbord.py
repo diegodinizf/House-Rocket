@@ -62,7 +62,7 @@ def overview(data):
     c1.metric(label="Number of Properties", value=data.shape[0])
     c2.metric(label='Average Price', value=round(data['price'].mean(),1))
     c3.metric(label='Purchase Recomendations', value=data[data['status'] == 'buy'].shape[0])
-    c4.metric(label='Recommended Renovations', value=data[data['renovation'] == 'yes'].shape[0])
+    c4.metric(label='Recommended Renovations', value=data[(data['status'] == 'buy') & (data['renovation'] == 'yes')].shape[0])
 
     data = data.copy()
     # Filtering
