@@ -1,4 +1,4 @@
-# House Rocket - Insights Project
+# House Sales - Insights Project
 
 In this link it's presented a Dashboard with the results of this project: 
 https://diegodinizf-house-roc-streamlit-reportstreamlit-dashbord-t2tc14.streamlitapp.com/
