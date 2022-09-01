@@ -1,4 +1,9 @@
-# House Rocket - Insights Project
+# House Sales - Insights Project
+
+In this link it's presented a Dashboard with the results of this project: 
+https://diegodinizf-house-roc-streamlit-reportstreamlit-dashbord-t2tc14.streamlitapp.com/
+
+#
 
 **Disclaimer**: this project was inspired by the "King County House Data" published on kaggle (https://www.kaggle.com/datasets/shivachandel/kc-house-data). It is a fictitious project but with all the steps of a real project.
 
@@ -24,18 +29,25 @@ The company's CEO wants to know a strategy to generate profits for the next year
 ## Solution Planning
 
 In the end of the project it will be delivered:
-- .csv report containing:
+- 3 .csv reports containing ("csv reports" folder):
   - recommended properties for buying
   - sale price suggestion in the season
   - indicator of whether or not the property could be renovated to increase the sale price 
-- Dashboard in Streamlit
+ 
+- Dashboard in Streamlit containing:
+  - filter options: price, bedrooms, bathrooms, waterfront
+  - overview map with price distribution
+  - density portfolio Map with recommendations
+  - download option of the 3 .csv reports mentioned above
   
  ### Tools
   
   In this project was used:
-  - Python
+  - Python (pandas, numpy, matplotlib, seaborn, folium, plotly)
+  - Visual Code Studio
   - Jupyter Notebook
   - Streamlit
+  - Version Control with git and github
   
  ### Process and Methods
  
@@ -129,6 +141,18 @@ This solution shows that it's possible to increase the sale prices by doing a re
 Below is presented a chart comparing the gaining House Rocket would have if they did a home renovation in some of the properties. The new results shows that profit increases in almost 2 times. A gain of more than **$ 800 million** in 1 year. 
 
 ![image](https://user-images.githubusercontent.com/110054775/187540653-7d67585e-d5e6-4744-9cc2-f89a610163f1.png)
+
+## Conclusion
+
+This project was able to present a strategy for the company to generate profit in a period of almost 1 year. It was presented purchase recommendations taking into account the conditions of the property. Also, it was possible to almost double the gains with a option of renovation in some homes that could have a bigger living space. In the end, everything that was proposed was delivered in a dynamic dashboard, using Streamlit, where the CEO may filter some attributes, and make his own visual and numeric anaylisis.
+
+## Next Steps
+
+Below are some suggestions for future steps in this project:
+
+- It can be done a sales forecast using machine learn models in order to indentify minor behaviors over the seasons
+- Since the number of bathrooms it's a influent factor over the price, it also can be done a study for new bathrooms constructions inside the property
+- Finally, the properties also could be evaluated by it's area: if it's urban or rural by its square feet lot, for example.
 
 
 
