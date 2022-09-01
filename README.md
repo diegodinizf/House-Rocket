@@ -29,7 +29,7 @@ The company's CEO wants to know a strategy to generate profits for the next year
 ## Solution Planning
 
 In the end of the project it will be delivered:
-- .csv report containing ("csv reports" folder):
+- 3 .csv reports containing ("csv reports" folder):
   - recommended properties for buying
   - sale price suggestion in the season
   - indicator of whether or not the property could be renovated to increase the sale price 
