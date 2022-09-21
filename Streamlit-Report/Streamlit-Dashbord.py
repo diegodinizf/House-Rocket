@@ -8,18 +8,11 @@ import plotly.express as px
 import folium 
 import geopandas
 
-from google.oauth2 import service_account
-from google.cloud import storage
+
+
 from streamlit_folium import folium_static
 from folium.plugins import MarkerCluster
 from datetime import datetime
-
-
-# Create API client
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"]
-
-client = storage.Client(credentials=credentials)
 
 st.set_page_config(layout='wide')
 
