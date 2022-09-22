@@ -1,7 +1,10 @@
 # House Sales - Insights Project
 
 In this link it's presented a Dashboard with the results of this project: 
-https://diegodinizf-house-roc-streamlit-reportstreamlit-dashbord-t2tc14.streamlitapp.com/
+https://diegodinizf-house-sal-streamlit-reportstreamlit-dashbord-v52qn9.streamlitapp.com/
+
+![ezgif-2-0a3665a20b](https://user-images.githubusercontent.com/110054775/191847751-fd0fe955-7642-41f6-a3c8-b616a2c6384c.gif)
+
 
 #
 
